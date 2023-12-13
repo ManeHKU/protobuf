@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "service/pb";
+
+service Service {
+  rpc GetUpdatedURLs(GetUpdatedURLsRequest) returns (GetUpdatedURLsResponse);
+}
+
+message GetUpdatedURLsRequest {
+  optional google.protobuf.Timestamp versionTimestamp = 1;
+}
+
+message GetUpdatedURLsResponse {
+  optional URLsList latestURLs = 1;
+}
+
+message URLsList {
+  google.protobuf.Timestamp versionTimestamp = 1;
+  map<string, string> URLs = 2;
+}
