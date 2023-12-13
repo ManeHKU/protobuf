@@ -13,10 +13,9 @@ message GetUpdatedURLsRequest {
 }
 
 message GetUpdatedURLsResponse {
+  message URLsList {
+    google.protobuf.Timestamp versionTimestamp = 1;
+    map<string, string> URLs = 2;
+  }
   optional URLsList latestURLs = 1;
-}
-
-message URLsList {
-  google.protobuf.Timestamp versionTimestamp = 1;
-  map<string, string> URLs = 2;
 }
