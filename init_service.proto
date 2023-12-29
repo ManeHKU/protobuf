@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "initService/pb";
+
+service InitService {
+  rpc GetInitialConfig(GetInitialConfigRequest) returns (GetInitialConfigResponse);
+}
+
+message GetInitialConfigRequest {
+  optional google.protobuf.Timestamp versionTimestamp = 1;
+}
+
+message GetInitialConfigResponse {
+  optional URLsList latestURLs = 1;
+}
+
+message URLsList {
+  google.protobuf.Timestamp versionTimestamp = 1;
+  string supabaseURL = 2;
+  string supabaseKey = 3;
+}
