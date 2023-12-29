@@ -4,7 +4,7 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "service/pb";
 
-service Service {
+service MainService {
   rpc GetUpdatedURLs(GetUpdatedURLsRequest) returns (GetUpdatedURLsResponse);
 }
 
