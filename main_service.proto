@@ -1,11 +1,18 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 option go_package = "service/pb";
 
 service MainService {
   rpc GetUpdatedURLs(GetUpdatedURLsRequest) returns (GetUpdatedURLsResponse);
+  rpc UpdateUserInfo(UpdateUserInfoRequest) returns (google.protobuf.Empty);
+}
+
+message UpdateUserInfoRequest {
+  optional uint32 uid = 1;
+  optional string fullName = 2;
 }
 
 message GetUpdatedURLsRequest {
