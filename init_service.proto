@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
+package init;
 option go_package = "initService/pb";
 
 service InitService {
