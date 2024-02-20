@@ -9,6 +9,11 @@ option go_package = "service/pb";
 service MainService {
   rpc GetUpdatedURLs(GetUpdatedURLsRequest) returns (GetUpdatedURLsResponse);
   rpc UpdateUserInfo(UpdateUserInfoRequest) returns (google.protobuf.Empty);
+  rpc UpsertTakenCourses(UpsertTakenCoursesRequest) returns (google.protobuf.Empty);
+}
+
+message UpsertTakenCoursesRequest {
+  repeated string takenCourseCodes = 1;
 }
 
 message UpdateUserInfoRequest {
