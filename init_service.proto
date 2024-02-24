@@ -21,11 +21,32 @@ message GetInitialConfigResponse {
 message UserSignInRequest {
   string userId = 1;
   string password = 2;
+  repeated Cookie cookies = 3;
 }
 
 message UserSignInResponse {
   bool isVerified = 1;
-  optional string cookies = 2;
+  repeated Cookie cookies = 2;
+}
+
+
+message Cookie {
+  string name = 1;
+  string value = 2;
+  string domain = 3;
+  string path = 4;
+  google.protobuf.Timestamp expires = 5;
+  int32 size = 6;
+  bool httpOnly = 7;
+  bool secure = 8;
+  bool session = 9;
+  optional string sameSite = 10;
+  string priority = 11;
+  bool sameParty = 12;
+  string sourceScheme = 13;
+  int32 sourcePort = 14;
+  optional string partitionKey = 15;
+  optional bool partitionKeyOpaque = 16;
 }
 
 message URLsList {
