@@ -21,7 +21,6 @@ message GetInitialConfigResponse {
 message UserSignInRequest {
   string userId = 1;
   string password = 2;
-  optional string cookies = 3;
 }
 
 message UserSignInResponse {
