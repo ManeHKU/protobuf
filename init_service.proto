@@ -7,6 +7,7 @@ option go_package = "initService/pb";
 
 service InitService {
   rpc GetInitialConfig(GetInitialConfigRequest) returns (GetInitialConfigResponse);
+  rpc VerifyUserSISLogin(UserSignInRequest) returns (UserSignInResponse);
 }
 
 message GetInitialConfigRequest {
@@ -15,6 +16,16 @@ message GetInitialConfigRequest {
 
 message GetInitialConfigResponse {
   optional URLsList latestURLs = 1;
+}
+
+message UserSignInRequest {
+  string userId = 1;
+  string password = 2;
+}
+
+message UserSignInResponse {
+  bool isVerified = 1;
+  optional string cookies = 2;
 }
 
 message URLsList {
