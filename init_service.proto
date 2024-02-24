@@ -35,7 +35,7 @@ message Cookie {
   string value = 2;
   string domain = 3;
   string path = 4;
-  google.protobuf.Timestamp expires = 5;
+  float expires = 5;
   int32 size = 6;
   bool httpOnly = 7;
   bool secure = 8;
