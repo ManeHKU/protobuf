@@ -37,7 +37,7 @@ message Cookie {
   string path = 4;
   float expires = 5;
   int32 size = 6;
-  bool httpOnly = 7;
+  bool HTTPOnly = 7;
   bool secure = 8;
   bool session = 9;
   optional string sameSite = 10;
