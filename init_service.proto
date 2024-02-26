@@ -37,17 +37,17 @@ message Cookie {
   string domain = 3;
   string path = 4;
   float expires = 5;
-  int32 size = 6;
+//  int32 size = 6;
   bool HTTPOnly = 7 [json_name="httpOnly"];
   bool secure = 8;
-  bool session = 9;
+//  bool session = 9;
   optional string sameSite = 10;
   string priority = 11;
   bool sameParty = 12;
   string sourceScheme = 13;
   int32 sourcePort = 14;
   optional string partitionKey = 15;
-  optional bool partitionKeyOpaque = 16;
+//  optional bool partitionKeyOpaque = 16;
 }
 
 message URLsList {
