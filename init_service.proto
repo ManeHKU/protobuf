@@ -7,7 +7,7 @@ option go_package = "initService/pb";
 
 service InitService {
   rpc GetInitialConfig(GetInitialConfigRequest) returns (GetInitialConfigResponse);
-  rpc VerifyUserSISLogin(UserSignInRequest) returns (UserSignInResponse);
+  rpc GetSISTicket(UserSignInRequest) returns (UserSignInResponse);
 }
 
 message GetInitialConfigRequest {
@@ -25,8 +25,9 @@ message UserSignInRequest {
 }
 
 message UserSignInResponse {
-  bool isVerified = 1;
-  repeated Cookie cookies = 2;
+  bool canLogInToSIS = 1;
+  optional string ticketURL = 2;
+  repeated Cookie cookies = 3;
 }
 
 
